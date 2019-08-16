@@ -1,0 +1,99 @@
+<div *ngIf="!username" class="login-wrapper row h-100">
+
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 h-100 login-container">
+
+    <div class="mdl-card mdl-shadow--16dp mdl-color--accent h-100">
+
+      <div class="mdl-card__supporting-text my-auto">
+
+        <form name="form"
+              (ngSubmit)="f.form.valid && onSubmit()"
+              #f="ngForm"
+              novalidate>
+
+          <div class="form-group text-center">
+
+            <p class="h4 mb-4">
+
+              <a class="navbar-brand" href="#">
+                <img src="../assets/img/LOGO-dark.png" style="width: 90%; margin: auto" alt="">
+              </a>
+
+            </p>
+
+          </div>
+
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="username"
+                   [(ngModel)]="form.username"
+                   [name]="username"
+                   #username="ngModel"
+                   [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
+                   required
+                   minlength="4"
+                   autocomplete="off"
+                   placeholder="Enter Your User Name">
+            <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+              <div *ngIf="username.errors.required">User Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="password"
+                   [(ngModel)]="form.password"
+                   [name]="password"
+                   #password="ngModel"
+                   autocomplete="off"
+                   [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                   required
+                   minlength="4"
+                   placeholder="Enter Your Secret Password">
+            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+              <div *ngIf="password.errors.required">Password is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember-me">
+              <input type="checkbox" id="remember-me" class="mdl-checkbox__input" />
+              <span class="mdl-checkbox__label">Remember Me</span>
+            </label>
+
+          </div>
+
+          <div class="form-group">
+
+            <button type="submit"
+                    class="mdl-button mdl-js-button mdl-color--primary-dark text-white mdl-button--raised mdl-js-ripple-effect btn-lg btn-block">
+              <span>Submit</span>
+            </button>
+
+          </div>
+
+          <div class="form-group">
+
+            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+              Login failed: {{errorMessage}}
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+

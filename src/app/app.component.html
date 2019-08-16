@@ -1,0 +1,111 @@
+<ngx-spinner [bdColor]="'rgba(255,255,255)'" [size]="'large'" [color]="'#ffc709'" [type]="'ball-scale-multiple'">
+  <p class="mdl-color-text--primary-dark mt-5">Loading...</p>
+</ngx-spinner>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header *ngIf="username" class="mdl-layout__header">
+
+    <div class="mdl-layout__header-row mdl-color--accent top-header">
+
+      <button class="mdl-button mdl-js-button mdl-button--icon mdl-icon-margin" (click)="logout()">
+        <i class="material-icons">logout</i>
+      </button>
+
+      <!-- Right aligned menu below button -->
+      <button id="demo-menu-lower-right"
+              class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">notification_important</i>
+      </button>
+
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+        <li class="mdl-menu__item">Some Action</li>
+        <li class="mdl-menu__item">Another Action</li>
+        <li disabled class="mdl-menu__item">Disabled Action</li>
+        <li class="mdl-menu__item">Yet Another Action</li>
+      </ul>
+
+      <div class="mdl-layout-spacer"></div>
+
+      <button class="mdl-button mdl-js-button mdl-button--icon mdl-icon-margin" (click)="toggleDrawer()">
+        <i class="material-icons">view_module</i>
+      </button>
+
+    </div>
+
+    <div class="mdl-layout__header-row mdl-color--primary low-header">
+
+      <div class="mdl-layout-icon">
+        <img src="../assets/img/LOGO.png" height="60" alt="">
+      </div>
+
+      <div class="mdl-layout-spacer"></div>
+
+      <div class="btn-toolbar mdl-layout--large-screen-only">
+
+        <div class="btn-group" data-toggle="buttons">
+
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                  [routerLink]="['home']"
+                  routerLinkActive="mdl-color--accent">
+            <span class="text-white">HOME</span>
+          </button>
+
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                  [routerLink]="['projects']"
+                  routerLinkActive="mdl-color--accent">
+            <span class="text-white">PROJECTS</span>
+          </button>
+
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                  [routerLink]="['profiles']"
+                  routerLinkActive="mdl-color--accent">
+            <span class="text-white">QUALITY PROFILES</span>
+          </button>
+
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                  [routerLink]="['admin']"
+                  routerLinkActive="mdl-color--accent">
+            <span class="text-white">ADMINISTRATION</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <div *ngIf="username" class="mdl-layout__drawer">
+
+    <nav class="mdl-navigation">
+
+    </nav>
+
+  </div>
+
+  <main class="mdl-layout__content container-fluid" [ngClass]="{'bg': !username}">
+
+    <nav *ngIf="username" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+
+    <router-outlet></router-outlet>
+
+  </main>
+
+  <footer (click)="push()" class="mdl-mini-footer fixed-bottom mdl-color--primary-dark">
+
+    <span class="text-center py-3">© 2018 Copyright: Code Checker. All Rights Reserved</span>
+
+  </footer>
+
+</div>
+
+<ng-snotify class="material"></ng-snotify>

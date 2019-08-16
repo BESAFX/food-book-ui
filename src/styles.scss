@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+.material {
+  @import "~ng-snotify/styles/material";
+}
+.simple {
+  @import "~ng-snotify/styles/simple";
+}
+.dark {
+  @import "~ng-snotify/styles/dark";
+}
+
+.snotify-icon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+html * {
+  font-family: "Roboto Condensed", "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+main {
+  height: 100vh;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-120 {
+  font-size: 120px;
+}
+
+.modal-header{
+  padding: 5px;
+}
+
+.mdl-mini-footer {
+  padding: 10px;
+}
+
+.mdl-mini-footer span {
+  margin: auto;
+}
+
+.top-header {
+  height: 30px;
+  direction: rtl;
+}
+
+.low-header {
+  height: 80px;
+}
+
+.mdl-layout-icon {
+  display: inherit;
+}
+
+.mdl-layout__drawer-button {
+  display: none;
+}
+
+.mdl-layout__header-row {
+  padding: 0px 10px 0px 10px;
+}
+
+@media (min-width: 576px) {
+  .mdl-layout__drawer {
+    width: 350px;
+    transform: translateX(-350px);
+  }
+}
+
+@media (min-width: 768px) {
+  .mdl-layout__drawer {
+    width: 400px;
+    transform: translateX(-400px);
+  }
+}
+
+.mdl-layout__drawer.is-visible {
+  transform: translateX(0);
+}
+
+.bg {
+  /* The image used */
+  background-image: url("assets/img/banner.jpg");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

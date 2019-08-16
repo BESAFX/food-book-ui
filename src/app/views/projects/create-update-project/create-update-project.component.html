@@ -1,0 +1,136 @@
+<form name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate>
+
+  <div class="modal-header mdl-color--primary mdl-navigation__link-active">
+    <div class="panel-title m-0 p-0 mdl-list__item text-white">
+      <span class="mdl-list__item-primary-content">
+          <i class="material-icons mdl-list__item-icon text-white mr-1">book</i>
+          <span>New Project</span>
+      </span>
+    </div>
+    <a [routerLink]="" (click)="activeModal.dismiss('Cross click')">
+      <i class="material-icons">power_settings_new</i>
+    </a>
+  </div>
+
+  <div class="modal-body">
+
+      <div class="row">
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12"
+             [ngClass]="{'has-error': hasErrors(projName)}">
+          <label for="projName">Project Name</label>
+          <input type="text"
+                 class="form-control"
+                 id="projName"
+                 [(ngModel)]="form.projName"
+                 [name]="projName"
+                 #projName="ngModel"
+                 required
+                 minlength="4"
+                 autocomplete="off"
+                 placeholder="Enter Project Name...">
+
+          <div *ngIf="hasErrors(projName)" class="invalid-feedback">
+            <span *ngIf="projName.errors.required">Project Name is required.</span>
+            <span *ngIf="projName.errors.minlength">Project Name must be at least 4 characters long.</span>
+          </div>
+
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12"
+             [ngClass]="{'has-error': hasErrors(projName)}">
+          <label for="projKey">Project Key</label>
+          <input type="text"
+                 class="form-control"
+                 id="projKey"
+                 [(ngModel)]="form.projKey"
+                 [name]="projKey"
+                 #projKey="ngModel"
+                 required
+                 minlength="4"
+                 autocomplete="off"
+                 placeholder="Enter Project Key...">
+
+          <div *ngIf="hasErrors(projName)" class="invalid-feedback">
+            <span *ngIf="projName.errors.required">Porject Key is required.</span>
+            <span *ngIf="projName.errors.minlength">Porject Key must be at least 2 characters long.</span>
+          </div>
+
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="path">Project Path</label>
+          <input type="text"
+                 class="form-control"
+                 id="path"
+                 [(ngModel)]="form.path"
+                 [name]="path"
+                 #path="ngModel"
+                 required
+                 minlength="4"
+                 autocomplete="off"
+                 placeholder="Enter Project Path...">
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="userName">User Name</label>
+          <input type="text"
+                 class="form-control"
+                 id="userName"
+                 [(ngModel)]="form.userName"
+                 [name]="userName"
+                 #userName="ngModel"
+                 required
+                 minlength="4"
+                 autocomplete="off"
+                 placeholder="Enter Project User Name...">
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="password">Password</label>
+          <input type="text"
+                 class="form-control"
+                 id="password"
+                 [(ngModel)]="form.password"
+                 [name]="password"
+                 #password="ngModel"
+                 required
+                 minlength="4"
+                 autocomplete="off"
+                 placeholder="Enter Project User Name...">
+        </div>
+
+      </div>
+
+  </div>
+
+  <div class="modal-footer">
+
+    <div class="row w-100 m-0">
+
+      <div class="col-md-6 p-0">
+        <button type="button"
+                class="btn btn-dark float-md-left"
+                (click)="activeModal.close('Close click')">
+          <i class="fa fa-close"></i>
+          <span> Close</span>
+        </button>
+      </div>
+
+      <div class="col-md-6 p-0">
+        <button type="submit"
+                [disabled]="disabled"
+                class="btn btn-success float-md-right">
+          <i class="fa fa-save"></i>
+          <span> Save</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

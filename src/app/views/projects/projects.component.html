@@ -1,0 +1,75 @@
+<div class="container-fluid pr-4 pl-4">
+
+  <div class="row">
+
+    <div class="col-md-3">
+
+
+
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="card row mb-3">
+        <div class="card-body">
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <div class="form-group">
+                <label for="searchBy">Search</label>
+                <input type="text" class="form-control" id="searchBy" placeholder="Search By Name">
+              </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <div class="form-group">
+                <label for="sortBy">Sort By</label>
+                <select id="sortBy" class="custom-select">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Creation date</option>
+                  <option value="2">Scan date</option>
+                  <option value="3">No of bugs.</option>
+                  <option value="4">No. of vulnerabilities</option>
+                  <option value="5">No. of code smells</option>
+                  <option value="6">Unit test coverage</option>
+                  <option value="7">Duplication</option>
+                  <option value="8">Status</option>
+                </select>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card row mb-3">
+
+        <div class="card-header">Projects</div>
+
+        <div class="card-body">
+
+          <div class="row pull-right pr-3">
+
+            <button type="button" class="btn btn-warning text-white" (click)="createProject()">
+              <i class="fa fa-plus-square"></i>
+              <span> Add Project</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
